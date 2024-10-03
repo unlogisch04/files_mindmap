@@ -16,7 +16,7 @@ use OCP\Security\CSP\AddContentSecurityPolicyEvent;
 
 
 class Application extends App implements IBootstrap {
-    const APPNAME = 'files_mindmap';
+    const APPNAME = 'files_mindmap2';
 
 	public function __construct(array $urlParams = array()) {
 		parent::__construct(self::APPNAME, $urlParams);
