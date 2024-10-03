@@ -1,6 +1,7 @@
-app_name=mindmap
+app_name=files_mindmap2
 
-project_dir=$(CURDIR)/../$(app_name)
+#project_dir=$(CURDIR)/../$(app_name)
+project_dir=$(CURDIR)
 build_dir=$(CURDIR)/build
 appstore_dir=$(build_dir)/appstore
 source_dir=$(build_dir)/source
@@ -37,6 +38,11 @@ appstore: clean
 	--exclude=/README.md \
 	--exclude=/.gitignore \
 	--exclude=/Makefile \
+	--exclude=/package.json \
+	--exclude=/package-lock.json \
+	--exclude=/node_modules \
+	--exclude=/src \
+	--exclude=/vite.config.ts \
 	$(project_dir)/ $(sign_dir)/$(app_name)
 
 	@if [[ -f $(cert_dir)/$(app_name).key && -f $(cert_dir)/$(app_name).crt ]]; then \
