@@ -1,3 +1,4 @@
+SHELL := /bin/bash
 app_name=files_mindmap2
 
 #project_dir=$(CURDIR)/../$(app_name)
@@ -43,6 +44,7 @@ appstore: clean
 	--exclude=/node_modules \
 	--exclude=/src \
 	--exclude=/vite.config.ts \
+	--exclude=/.vscode \
 	$(project_dir)/ $(sign_dir)/$(app_name)
 
 	@if [[ -f $(cert_dir)/$(app_name).key && -f $(cert_dir)/$(app_name).crt ]]; then \
